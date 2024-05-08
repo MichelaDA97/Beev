@@ -13,6 +13,7 @@
 		2CE85CA22BEBA0220063F36F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE85CA12BEBA0220063F36F /* Preview Assets.xcassets */; };
 		2CE85CA42BEBA0220063F36F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85CA32BEBA0220063F36F /* Persistence.swift */; };
 		2CE85CA72BEBA0220063F36F /* Beev.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85CA52BEBA0220063F36F /* Beev.xcdatamodeld */; };
+		E4F9B8A22BEBBCC4000A2357 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9B8A12BEBBCC4000A2357 /* MainMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		2CE85CA12BEBA0220063F36F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CE85CA32BEBA0220063F36F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2CE85CA62BEBA0220063F36F /* Beev.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Beev.xcdatamodel; sourceTree = "<group>"; };
+		E4F9B8A12BEBBCC4000A2357 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				2CE85CA32BEBA0220063F36F /* Persistence.swift */,
 				2CE85CA52BEBA0220063F36F /* Beev.xcdatamodeld */,
 				2CE85CA02BEBA0220063F36F /* Preview Content */,
+				E4F9B8A12BEBBCC4000A2357 /* MainMapView.swift */,
 			);
 			path = Beev;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				2CE85CA42BEBA0220063F36F /* Persistence.swift in Sources */,
 				2CE85C9D2BEBA0200063F36F /* ContentView.swift in Sources */,
 				2CE85C9B2BEBA0200063F36F /* BeevApp.swift in Sources */,
+				E4F9B8A22BEBBCC4000A2357 /* MainMapView.swift in Sources */,
 				2CE85CA72BEBA0220063F36F /* Beev.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,9 +284,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Beev/Preview Content\"";
-				DEVELOPMENT_TEAM = CS786L2XRU;
+				DEVELOPMENT_TEAM = 595ULKU252;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = myPosition;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,9 +314,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Beev/Preview Content\"";
-				DEVELOPMENT_TEAM = CS786L2XRU;
+				DEVELOPMENT_TEAM = 595ULKU252;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = myPosition;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
