@@ -117,4 +117,9 @@ extension CLLocationCoordinate2D {
           latitude: 45.3618711,
           longitude: 7.7689828
       )
+    
+    static let fountain22: Self = .init(
+        latitude: 37.3229978,
+        longitude: -122.0321823
+    )
 }

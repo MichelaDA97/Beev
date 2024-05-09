@@ -7,6 +7,15 @@
 
 
 import SwiftUI
+import CoreLocation
+
+// Marker struct
+struct Marker: Identifiable {
+    let id = UUID()
+    let name: String
+    let coordinate: CLLocationCoordinate2D
+}
+
 
 let markers: [Marker] = [
     Marker(name: "Fountain 1", coordinate: .fountain1),
@@ -31,5 +40,6 @@ let markers: [Marker] = [
     Marker(name: "Fountain 19", coordinate: .fountain19),
     Marker(name: "Fountain 20", coordinate: .fountain20),
     Marker(name: "Fountain 21", coordinate: .fountain21),
+    Marker(name: "Fountain 22", coordinate: .fountain22),
 ]
 

@@ -18,6 +18,7 @@
 		E45FD9AE2BECB64900B1C6AB /* Fountains.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD9AD2BECB64900B1C6AB /* Fountains.swift */; };
 		E45FD9B02BECB89000B1C6AB /* Markers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD9AF2BECB89000B1C6AB /* Markers.swift */; };
 		E45FD9B22BECBC5400B1C6AB /* MarkerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD9B12BECBC5400B1C6AB /* MarkerCardView.swift */; };
+		E479C3092BED1617006EC7E4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479C3082BED1617006EC7E4 /* LocationDetailView.swift */; };
 		E4F9B8A22BEBBCC4000A2357 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9B8A12BEBBCC4000A2357 /* MainMapView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		E45FD9AF2BECB89000B1C6AB /* Markers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markers.swift; sourceTree = "<group>"; };
 		E45FD9B12BECBC5400B1C6AB /* MarkerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerCardView.swift; sourceTree = "<group>"; };
 		E45FD9B32BECC61300B1C6AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E479C3082BED1617006EC7E4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		E4F9B8A12BEBBCC4000A2357 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				E45FD9AF2BECB89000B1C6AB /* Markers.swift */,
 				E45FD9B12BECBC5400B1C6AB /* MarkerCardView.swift */,
 				2CE85CB32BECC9310063F36F /* GeneralView.swift */,
+				E479C3082BED1617006EC7E4 /* LocationDetailView.swift */,
 			);
 			path = Beev;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				2CE85CA42BEBA0220063F36F /* Persistence.swift in Sources */,
 				CDCD4C032BECCB2D00E32E21 /* CloudKitUser.swift in Sources */,
+				E479C3092BED1617006EC7E4 /* LocationDetailView.swift in Sources */,
 				2CE85C9D2BEBA0200063F36F /* ContentView.swift in Sources */,
 				2CE85C9B2BEBA0200063F36F /* BeevApp.swift in Sources */,
 				E4F9B8A22BEBBCC4000A2357 /* MainMapView.swift in Sources */,

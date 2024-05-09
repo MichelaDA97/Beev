@@ -2,13 +2,6 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-// Marker struct
-struct Marker: Identifiable {
-    let id = UUID()
-    let name: String
-    let coordinate: CLLocationCoordinate2D
-}
-
 
 
 // ContentView
@@ -71,7 +64,7 @@ struct MainMapView: View {
             }
         }
     }
-
+    
 }
 
 //PREVIEW
@@ -81,6 +74,7 @@ struct MainMapView_Previews: PreviewProvider {
        
     }
 }
+
 
 
 

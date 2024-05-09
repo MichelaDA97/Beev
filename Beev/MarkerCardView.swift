@@ -5,6 +5,7 @@ import MapKit
 struct MarkerCardView: View {
     let marker: Marker
     @State private var address = "Loading..." // Placeholder for address
+    @State private var showingDirections = false
     
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
@@ -19,11 +20,14 @@ struct MarkerCardView: View {
                             .font(.system(size: 18, weight: .light, design: .default)) // Set font to SF Compact
                         Spacer()
                         Button(action: {
-                            navigateToMarker()
+                            showingDirections = true
                         }) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .foregroundColor(.white)
                                 .font(.system(size: 25, weight: .light, design: .default))
+                        }
+                        .sheet(isPresented: $showingDirections) {
+                            LocationDetailView(marker: marker)
                         }
                     }
                 }
@@ -50,15 +54,7 @@ struct MarkerCardView: View {
                 }
             }
     }
-    
-    func navigateToMarker() {
-        let coordinate = CLLocationCoordinate2D(latitude: marker.coordinate.latitude, longitude: marker.coordinate.longitude)
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
-        mapItem.name = marker.name
-        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
-    }
 }
-
 #Preview{
     MarkerCardView(marker: Marker(name: "Fountain 1", coordinate: CLLocationCoordinate2D(latitude: 45.123, longitude: 9.456)))
 }
