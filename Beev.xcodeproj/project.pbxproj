@@ -25,6 +25,7 @@
 		2CE85CA32BEBA0220063F36F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2CE85CA62BEBA0220063F36F /* Beev.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Beev.xcdatamodel; sourceTree = "<group>"; };
 		CDCD4BC12BEC217C00E32E21 /* Beev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Beev.entitlements; sourceTree = "<group>"; };
+		CDCD4BFD2BECB53000E32E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E4F9B8A12BEBBCC4000A2357 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +59,7 @@
 		2CE85C992BEBA0200063F36F /* Beev */ = {
 			isa = PBXGroup;
 			children = (
+				CDCD4BFD2BECB53000E32E21 /* Info.plist */,
 				CDCD4BC12BEC217C00E32E21 /* Beev.entitlements */,
 				2CE85C9A2BEBA0200063F36F /* BeevApp.swift */,
 				2CE85C9C2BEBA0200063F36F /* ContentView.swift */,
@@ -290,6 +292,7 @@
 				DEVELOPMENT_TEAM = 6R2JUS5B89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Beev/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = myPosition;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -321,6 +324,7 @@
 				DEVELOPMENT_TEAM = 6R2JUS5B89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Beev/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = myPosition;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
