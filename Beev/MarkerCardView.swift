@@ -1,10 +1,3 @@
-//
-//  MarkerCardView.swift
-//  Beev
-//
-//  Created by Maria Concetta on 09/05/24.
-//
-
 import SwiftUI
 import MapKit
 
@@ -19,12 +12,22 @@ struct MarkerCardView: View {
             .frame(width: 350, height: 120)
             .overlay(
                 VStack {
-                
-                    Text(address) // Display address here
-                        .foregroundColor(.white)
-                        .lineLimit(1)
-                        .font(.system(size: 20, weight: .light, design: .default)) // Set font to SF Compact
+                    HStack {
+                        Text(address) // Display address here
+                            .foregroundColor(.white)
+                            .lineLimit(1)
+                            .font(.system(size: 18, weight: .light, design: .default)) // Set font to SF Compact
+                        Spacer()
+                        Button(action: {
+                            navigateToMarker()
+                        }) {
+                            Image(systemName: "arrow.right.circle.fill")
+                                .foregroundColor(.white)
+                                .font(.system(size: 25, weight: .light, design: .default))
+                        }
+                    }
                 }
+                .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
             )
             .padding()
             .onAppear {
@@ -40,17 +43,22 @@ struct MarkerCardView: View {
                         return
                     }
                     if let address = placemark.addressDictionary?["FormattedAddressLines"] as? [String], let firstLine = address.first {
-                                         self.address = firstLine
-                                     } else {
-                                         self.address = "Address not found"
-                                     }
+                        self.address = firstLine
+                    } else {
+                        self.address = "Address not found"
+                    }
                 }
             }
     }
+    
+    func navigateToMarker() {
+        let coordinate = CLLocationCoordinate2D(latitude: marker.coordinate.latitude, longitude: marker.coordinate.longitude)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
+        mapItem.name = marker.name
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+    }
 }
-
 
 #Preview{
     MarkerCardView(marker: Marker(name: "Fountain 1", coordinate: CLLocationCoordinate2D(latitude: 45.123, longitude: 9.456)))
 }
-
