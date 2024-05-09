@@ -13,6 +13,7 @@
 		2CE85CA22BEBA0220063F36F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE85CA12BEBA0220063F36F /* Preview Assets.xcassets */; };
 		2CE85CA42BEBA0220063F36F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85CA32BEBA0220063F36F /* Persistence.swift */; };
 		2CE85CA72BEBA0220063F36F /* Beev.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85CA52BEBA0220063F36F /* Beev.xcdatamodeld */; };
+		2CE85CB42BECC9310063F36F /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85CB32BECC9310063F36F /* GeneralView.swift */; };
 		E45FD9AE2BECB64900B1C6AB /* Fountains.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD9AD2BECB64900B1C6AB /* Fountains.swift */; };
 		E45FD9B02BECB89000B1C6AB /* Markers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD9AF2BECB89000B1C6AB /* Markers.swift */; };
 		E45FD9B22BECBC5400B1C6AB /* MarkerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD9B12BECBC5400B1C6AB /* MarkerCardView.swift */; };
@@ -27,6 +28,7 @@
 		2CE85CA12BEBA0220063F36F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CE85CA32BEBA0220063F36F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2CE85CA62BEBA0220063F36F /* Beev.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Beev.xcdatamodel; sourceTree = "<group>"; };
+		2CE85CB32BECC9310063F36F /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		CDCD4BC12BEC217C00E32E21 /* Beev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Beev.entitlements; sourceTree = "<group>"; };
 		E45FD9AD2BECB64900B1C6AB /* Fountains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fountains.swift; sourceTree = "<group>"; };
 		E45FD9AF2BECB89000B1C6AB /* Markers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markers.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				E45FD9AD2BECB64900B1C6AB /* Fountains.swift */,
 				E45FD9AF2BECB89000B1C6AB /* Markers.swift */,
 				E45FD9B12BECBC5400B1C6AB /* MarkerCardView.swift */,
+				2CE85CB32BECC9310063F36F /* GeneralView.swift */,
 			);
 			path = Beev;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				E4F9B8A22BEBBCC4000A2357 /* MainMapView.swift in Sources */,
 				2CE85CA72BEBA0220063F36F /* Beev.xcdatamodeld in Sources */,
 				E45FD9AE2BECB64900B1C6AB /* Fountains.swift in Sources */,
+				2CE85CB42BECC9310063F36F /* GeneralView.swift in Sources */,
 				E45FD9B22BECBC5400B1C6AB /* MarkerCardView.swift in Sources */,
 				E45FD9B02BECB89000B1C6AB /* Markers.swift in Sources */,
 			);
