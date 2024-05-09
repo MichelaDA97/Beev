@@ -12,17 +12,39 @@ struct MainMapView: View {
         span: MKCoordinateSpan(latitudeDelta: 180, longitudeDelta: 180)
     )
     
+    @State private var cameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
+
     @State private var style: MKMapType = .hybridFlyover
     
     @State private var selectedMarker: Marker? = nil
+    
+    @State private var pos : MapCameraPosition = .userLocation(fallback: .automatic)
+  /*
+    
+    func updateCameraPosition() {
+        if let userLocation = locationManager.userLocation {
+            let userRegion = MKCoordinateRegion(
+                center: userLocation.coordinate,
+                span: MKCoordinateSpan(
+                    latitudeDelta: 0.15,
+                    longitudeDelta: 0.15
+                )
+            )
+            withAnimation {
+                cameraPosition = .region(userRegion)
+            }
+        }
+    }*/
+    
+    
     
     var body: some View {
         ZStack {
             Map(coordinateRegion: $myPosition, showsUserLocation: true, userTrackingMode: .none, annotationItems: markers) { marker in
                 MapAnnotation(coordinate: marker.coordinate) {
-                    Image(systemName: "drop.fill")
+                    Image("f1")
                         .resizable()
-                        .frame(width: 30, height: 50)
+                        .frame(width: 30, height: 30)
                         .foregroundColor(.blue)
                         .animation(.spring(response: 0.2, dampingFraction: 0.5)) // Animation
                         .onTapGesture {
@@ -32,14 +54,19 @@ struct MainMapView: View {
             }
             .onAppear {
                 // Set the initial map region
+                
+               
                 myPosition = MKCoordinateRegion(
-                    center: CLLocationCoordinate2D(latitude: 37, longitude: -122),
-                    span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                    center: CLLocationCoordinate2D(latitude: 40, longitude: -122),
+                    span: MKCoordinateSpan(latitudeDelta: 180, longitudeDelta: 180)
                 )
+                
                 style = .hybridFlyover
                 
                 // Request location authorization
                 CLLocationManager().requestWhenInUseAuthorization()
+                
+            
             }
             .mapControls {
                 MapUserLocationButton() // Button to return to user's location
