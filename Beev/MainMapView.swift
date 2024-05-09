@@ -33,7 +33,7 @@ struct MainMapView: View {
             .onAppear {
                 // Set the initial map region
                 myPosition = MKCoordinateRegion(
-                    center: CLLocationCoordinate2D(latitude: 48.88, longitude: 2.33),
+                    center: CLLocationCoordinate2D(latitude: 37, longitude: -122),
                     span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                 )
                 style = .hybridFlyover
@@ -62,7 +62,7 @@ struct MainMapView: View {
                         }
                 }
             }
-        }
+        }.ignoresSafeArea()
     }
     
 }

@@ -5,14 +5,13 @@ struct LocationDetailView: View {
     var marker: Marker
     @State private var directions: [MKRoute.Step]?
     @State private var error: Error?
-    @State private var routeShown = false
     
     var body: some View {
         VStack {
             if let directions = directions {
                 VStack {
                     MapView(routeSteps: directions, destination: marker.coordinate)
-                        .frame(height: 300)
+                        .frame(height: 500).ignoresSafeArea()
                     List {
                         ForEach(directions, id: \.instructions) { step in
                             Text(step.instructions)
@@ -38,6 +37,7 @@ struct LocationDetailView: View {
         request.destination = MKMapItem(placemark: destinationPlacemark)
         request.requestsAlternateRoutes = false
         request.transportType = .automobile
+    
         
         let directions = MKDirections(request: request)
         directions.calculate { response, error in
@@ -45,7 +45,6 @@ struct LocationDetailView: View {
                 self.error = error
             } else if let response = response {
                 self.directions = response.routes.first?.steps
-                self.routeShown = true
             }
         }
     }
@@ -99,3 +98,4 @@ struct MapView: UIViewRepresentable {
 #Preview("Location Detail View") {
     LocationDetailView(marker: Marker(name: "Elite Fitness Gym", coordinate: CLLocationCoordinate2D(latitude: 40.730610, longitude: -73.935242)))
 }
+
