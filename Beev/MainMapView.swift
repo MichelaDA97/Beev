@@ -2,41 +2,20 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-
-
 // ContentView
 struct MainMapView: View {
-    
     @State private var myPosition: MKCoordinateRegion = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 0, longitude: 90),
+        center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
         span: MKCoordinateSpan(latitudeDelta: 180, longitudeDelta: 180)
     )
     
-    @State private var cameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
-
-    @State private var style: MKMapType = .hybridFlyover
+    @State private var mapCameraMode: MapCameraPosition = .userLocation(fallback: .automatic)
+    
+    @State private var style: MapStyle = .hybrid
     
     @State private var selectedMarker: Marker? = nil
     
-    @State private var pos : MapCameraPosition = .userLocation(fallback: .automatic)
-  /*
-    
-    func updateCameraPosition() {
-        if let userLocation = locationManager.userLocation {
-            let userRegion = MKCoordinateRegion(
-                center: userLocation.coordinate,
-                span: MKCoordinateSpan(
-                    latitudeDelta: 0.15,
-                    longitudeDelta: 0.15
-                )
-            )
-            withAnimation {
-                cameraPosition = .region(userRegion)
-            }
-        }
-    }*/
-    
-    
+    @State private var locationManager = CLLocationManager()
     
     var body: some View {
         ZStack {
@@ -52,24 +31,11 @@ struct MainMapView: View {
                         }
                 }
             }
+            .mapStyle(style)
             .onAppear {
-                // Set the initial map region
-                
-               
-                myPosition = MKCoordinateRegion(
-                    center: CLLocationCoordinate2D(latitude: 40, longitude: -122),
-                    span: MKCoordinateSpan(latitudeDelta: 180, longitudeDelta: 180)
-                )
-                
-                style = .hybridFlyover
-                
-                // Request location authorization
-                CLLocationManager().requestWhenInUseAuthorization()
-                
-            
+                setupMap()
             }
             .mapControls {
-                MapUserLocationButton() // Button to return to user's location
                 MapPitchToggle() // Button to switch to 3D
             }
             .gesture(
@@ -79,7 +45,22 @@ struct MainMapView: View {
                     }
             )
             
-            // Card per visualizzare i dettagli del marker selezionato
+            // User location button
+            ZStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        centerMapOnUserLocation()
+                    }) {
+                        Image(systemName: "location.fill")
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+                }
+            }
+            
+            // Card to display details of the selected marker
             if let marker = selectedMarker {
                 VStack{
                     Spacer()
@@ -89,20 +70,61 @@ struct MainMapView: View {
                         }
                 }
             }
-        }.ignoresSafeArea()
+        }
+        .ignoresSafeArea()
     }
     
+    private func setupMap() {
+        // Request location authorization
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        // Set the initial map region to the user's location
+        LocationManagerDelegate().startUpdatingLocation(locationManager: locationManager, completion: { region in
+            self.myPosition = region
+        })
+    }
+    
+    private func centerMapOnUserLocation() {
+        if let userLocation = locationManager.location?.coordinate {
+            myPosition = MKCoordinateRegion(
+                center: userLocation,
+                span: MKCoordinateSpan(latitudeDelta:180, longitudeDelta: 180)
+            )
+        }
+    }
+}
+
+class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
+            self.locationManager(manager, didUpdateRegion: region)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateRegion region: MKCoordinateRegion) {
+        // Call the completion handler with the updated region
+        if let completion = manager.delegate as? (MKCoordinateRegion) -> Void {
+completion(region)
+        }
+    }
+    
+    func startUpdatingLocation(locationManager: CLLocationManager, completion: @escaping (MKCoordinateRegion) -> Void) {
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        
+        // Set the initial map region to the user's location
+        if let location = locationManager.location {
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
+            completion(region)
+        }
+    }
 }
 
 //PREVIEW
 struct MainMapView_Previews: PreviewProvider {
     static var previews: some View {
         MainMapView()
-       
     }
 }
-
-
-
-
-
