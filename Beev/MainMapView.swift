@@ -17,24 +17,50 @@ struct MainMapView: View {
     
     @State private var locationManager = CLLocationManager()
     
+    @State private var isAdding = false
+    
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $myPosition, showsUserLocation: true, userTrackingMode: .none, annotationItems: markers) { marker in
-                MapAnnotation(coordinate: marker.coordinate) {
-                    Image("f1")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.blue)
-                        .animation(.spring(response: 0.2, dampingFraction: 0.5)) // Animation
-                        .onTapGesture {
-                            selectedMarker = marker
-                        }
+            
+            
+            MapReader{ proxy in
+                
+                
+                Map(coordinateRegion: $myPosition, showsUserLocation: true, userTrackingMode: .none, annotationItems: markers) { marker in
+                    MapAnnotation(coordinate: marker.coordinate) {
+                        Image("f1")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.blue)
+                            .animation(.spring(response: 0.2, dampingFraction: 0.5)) // Animation
+                            .onTapGesture {
+                                selectedMarker = marker
+                            }
+                    }
+                }
+                
+                //LEGGE LE COORDINATE
+            }.onTapGesture {position in //position è di tipo CGPOINT
+                if isAdding{
+                    print(position)
+                    isAdding = false
                 }
             }
+            
+            
+            
+            
             .mapStyle(style)
             .onAppear {
                 setupMap()
             }
+            
+            
+            
+            
+            
+            
+            
             .mapControls {
                 MapPitchToggle() // Button to switch to 3D
             }
@@ -44,6 +70,9 @@ struct MainMapView: View {
                         selectedMarker = nil
                     }
             )
+            
+            
+            
             
             // User location button
             ZStack {
@@ -57,8 +86,22 @@ struct MainMapView: View {
                             .foregroundColor(.white)
                             .padding()
                     }
+                    
+                    
+                    //ADD
+                    Button("ADD"){
+                        
+                        isAdding = true
+                    }.background()
+                    
+                    
+                    
+                    
                 }
             }
+            
+            
+            
             
             // Card to display details of the selected marker
             if let marker = selectedMarker {
@@ -106,7 +149,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateRegion region: MKCoordinateRegion) {
         // Call the completion handler with the updated region
         if let completion = manager.delegate as? (MKCoordinateRegion) -> Void {
-completion(region)
+            completion(region)
         }
     }
     

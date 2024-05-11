@@ -19,6 +19,7 @@
 		E45FD9B02BECB89000B1C6AB /* Markers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD9AF2BECB89000B1C6AB /* Markers.swift */; };
 		E45FD9B22BECBC5400B1C6AB /* MarkerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD9B12BECBC5400B1C6AB /* MarkerCardView.swift */; };
 		E479C3092BED1617006EC7E4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479C3082BED1617006EC7E4 /* LocationDetailView.swift */; };
+		E4930C072BEFD25C000D5845 /* ItemListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4930C062BEFD25C000D5845 /* ItemListing.swift */; };
 		E4F9B8A22BEBBCC4000A2357 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9B8A12BEBBCC4000A2357 /* MainMapView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		E45FD9B12BECBC5400B1C6AB /* MarkerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerCardView.swift; sourceTree = "<group>"; };
 		E45FD9B32BECC61300B1C6AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E479C3082BED1617006EC7E4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		E4930C062BEFD25C000D5845 /* ItemListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListing.swift; sourceTree = "<group>"; };
 		E4F9B8A12BEBBCC4000A2357 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 		2CE85C992BEBA0200063F36F /* Beev */ = {
 			isa = PBXGroup;
 			children = (
+				E4930C052BEFD0AF000D5845 /* Models */,
 				E45FD9B32BECC61300B1C6AB /* Info.plist */,
 				CDCD4BC12BEC217C00E32E21 /* Beev.entitlements */,
 				2CE85C9A2BEBA0200063F36F /* BeevApp.swift */,
@@ -96,6 +99,14 @@
 				2CE85CA12BEBA0220063F36F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E4930C052BEFD0AF000D5845 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4930C062BEFD25C000D5845 /* ItemListing.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE85CA42BEBA0220063F36F /* Persistence.swift in Sources */,
+				E4930C072BEFD25C000D5845 /* ItemListing.swift in Sources */,
 				CDCD4C032BECCB2D00E32E21 /* CloudKitUser.swift in Sources */,
 				E479C3092BED1617006EC7E4 /* LocationDetailView.swift in Sources */,
 				2CE85C9D2BEBA0200063F36F /* ContentView.swift in Sources */,
