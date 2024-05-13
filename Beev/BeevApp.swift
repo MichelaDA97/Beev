@@ -15,6 +15,8 @@ struct BeevApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+
         }
+        .environment(\.colorScheme, .dark)
     }
 }

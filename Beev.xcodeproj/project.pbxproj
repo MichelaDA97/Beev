@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CBBB71D2BF21DE200E59C59 /* DirectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBB71C2BF21DE200E59C59 /* DirectionModalView.swift */; };
 		2CE85C9B2BEBA0200063F36F /* BeevApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85C9A2BEBA0200063F36F /* BeevApp.swift */; };
 		2CE85C9D2BEBA0200063F36F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85C9C2BEBA0200063F36F /* ContentView.swift */; };
 		2CE85C9F2BEBA0220063F36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE85C9E2BEBA0220063F36F /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CBBB71C2BF21DE200E59C59 /* DirectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionModalView.swift; sourceTree = "<group>"; };
 		2CE85C972BEBA0200063F36F /* Beev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE85C9A2BEBA0200063F36F /* BeevApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeevApp.swift; sourceTree = "<group>"; };
 		2CE85C9C2BEBA0200063F36F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				E45FD9B12BECBC5400B1C6AB /* MarkerCardView.swift */,
 				2CE85CB32BECC9310063F36F /* GeneralView.swift */,
 				E479C3082BED1617006EC7E4 /* LocationDetailView.swift */,
+				2CBBB71C2BF21DE200E59C59 /* DirectionModalView.swift */,
 			);
 			path = Beev;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE85CA42BEBA0220063F36F /* Persistence.swift in Sources */,
+				2CBBB71D2BF21DE200E59C59 /* DirectionModalView.swift in Sources */,
 				E4930C072BEFD25C000D5845 /* ItemListing.swift in Sources */,
 				CDCD4C032BECCB2D00E32E21 /* CloudKitUser.swift in Sources */,
 				E479C3092BED1617006EC7E4 /* LocationDetailView.swift in Sources */,

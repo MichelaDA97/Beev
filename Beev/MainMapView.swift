@@ -11,7 +11,7 @@ struct MainMapView: View {
     
     @State private var mapCameraMode: MapCameraPosition = .userLocation(fallback: .automatic)
     
-    @State private var style: MapStyle = .hybrid
+    @State private var style: MapStyle = .standard
     
     @State private var selectedMarker: Marker? = nil
     
@@ -46,7 +46,7 @@ struct MainMapView: View {
                 }
             }
             .mapStyle(.standard(pointsOfInterest: .excludingAll))
-            .blendMode(.difference)
+//            .blendMode(.exclusion)
             
             
             

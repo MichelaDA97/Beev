@@ -5,18 +5,34 @@ struct LocationDetailView: View {
     var marker: Marker
     @State private var directions: [MKRoute.Step]?
     @State private var error: Error?
+    @State private var showDirections = false
+    
     
     var body: some View {
         VStack {
             if let directions = directions {
                 VStack {
                     MapView(routeSteps: directions, destination: marker.coordinate)
-                        .frame(height: 500).ignoresSafeArea()
-                    List {
-                        ForEach(directions, id: \.instructions) { step in
-                            Text(step.instructions)
-                        }
+//                        .frame(height: 500)
+                        .ignoresSafeArea()
+                        .mapStyle(.standard(pointsOfInterest: .excludingAll))
+//                        .blendMode(.difference)
+                    
+                    Button("Mostra direzioni") {
+                        self.showDirections = true
                     }
+                    .sheet(isPresented: $showDirections, content: {
+                        DirectionModalView(directions: directions)
+                        .presentationDetents([.medium, .large])
+                    })
+                    
+//                    List {
+//                        ForEach(directions, id: \.instructions) { step in
+//                            Text(step.instructions)
+//                   .listRowBackground(Color.clear)
+//                    
+//                        }
+//                    }
                 }
             } else if let error = error {
                 Text("Error: \(error.localizedDescription)")
@@ -59,6 +75,8 @@ struct MapView: UIViewRepresentable {
         mapView.delegate = context.coordinator
         
         mapView.showsUserLocation = true
+        
+    
         
         var coordinates = [CLLocationCoordinate2D]()
         for step in routeSteps {
