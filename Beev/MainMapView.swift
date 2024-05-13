@@ -38,7 +38,6 @@ struct MainMapView: View {
                             }
                     }
                 }
-                
                 //LEGGE LE COORDINATE
             }.onTapGesture {position in //position è di tipo CGPOINT
                 if isAdding{
@@ -46,6 +45,8 @@ struct MainMapView: View {
                     isAdding = false
                 }
             }
+            .mapStyle(.standard(pointsOfInterest: .excludingAll))
+            .blendMode(.difference)
             
             
             
